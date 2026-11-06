@@ -16,4 +16,4 @@ An interactive multiplayer-style party game focused on dynamic captioning and cr
 * Clean and responsive user interface layout.
 
 ## How to Play / Live Demo
-You can view and play the live game here: [Insert GitHub Pages Link Here]
+You can view and play the live game here: https://shivagayathrichenna.github.io/caption-this-creature/ 
