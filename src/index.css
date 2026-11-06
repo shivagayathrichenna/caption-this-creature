@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #2b2140;
+  --color-cream: #fff7e6;
+  --color-tomato: #ff5d5d;
+  --color-sunny: #ffc933;
+  --color-mint: #3ddc97;
+  --color-sky: #4cc9f0;
+  --color-grape: #8b5cf6;
+  --color-bubble: #ff8fb1;
+
+  --font-display: "Fredoka", ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+  --font-sans: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --animate-pop: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-floaty: floaty 4.5s ease-in-out infinite;
+  --animate-wiggle: wiggle 1.4s ease-in-out infinite;
+  --animate-rise: rise 0.45s ease-out both;
+
+  @keyframes pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.85) translateY(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--tilt, 0deg));
+    }
+    50% {
+      transform: translateY(-8px) rotate(var(--tilt, 0deg));
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+  }
+  @keyframes rise {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    background-color: var(--color-cream);
+    background-image: radial-gradient(rgba(43, 33, 64, 0.09) 1.6px, transparent 1.6px);
+    background-size: 24px 24px;
+  }
+  button,
+  input,
+  textarea {
+    font-family: inherit;
+  }
+  ::selection {
+    background: var(--color-sunny);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
